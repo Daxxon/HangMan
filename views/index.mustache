@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GUESS WHO?</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <h4>PLEASE GUESS THE WORD</h4>
+    <p>(If you don't, we will hang a stick-figure)</p>
+  </br>
+    {{#word}}
+      <span style="text-decoration: underline">{{letter}}</span>
+    {{/word}}
+    <p>Choose your letter wisely</p>
+    <form action="/guess" method="post">
+      <input type="text" name="guess"></input>
+      <button>Submit</button>
+    </form>
+    <!-- insert shit here -->
+    <!-- <script src="main.js"></script> -->
+  </body>
+</html>
