@@ -8,24 +8,38 @@
   <body>
     <h4>PLEASE GUESS THE WORD</h4>
     <p>(If you don't, we will hang a stick-figure)</p>
-  </br>
-  {{#progress}}
-    {{#word}}
-      <span style="text-decoration: underline">{{letter}}</span>
-    {{/word}}
-  {{/progress}}
-  <p>Choose your letter wisely</p>
-  </br>
-  <p>Lettes Not In Word</p>
-  {{#guessed}}
-    <span style="text-decoration: underline">{{.}}</span>
-  {{/guessed}}
-  <form action="/guess" method="post">
-    <input type="text" name="guess" autoFocus="true"></input>
-    <button>Submit</button>
-  </form>
+    </br>
+    {{#progress}}
+      {{#word}}
+        <span style="text-decoration: underline">{{letter}}</span>
+      {{/word}}
+    {{/progress}}
+    <p>Choose your letter wisely</p>
+    </br>
+    <p>Lettes Not In Word</p>
+    {{#guessed}}
+      <span style="text-decoration: underline">{{.}}</span>
+    {{/guessed}}
+    <form action="/guess" method="post">
+      <input type="text" name="guess" autoFocus="true"></input>
+      <button>Submit</button>
+    </form>
 
     <!-- insert shit here -->
     <!-- <script src="main.js"></script> -->
+
+    <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBGShxOyXRZrEVQkKqWtVcsSJmgnAW1ddY",
+        authDomain: "hangman-f42aa.firebaseapp.com",
+        databaseURL: "https://hangman-f42aa.firebaseio.com",
+        projectId: "hangman-f42aa",
+        storageBucket: "",
+        messagingSenderId: "365387687087"
+      };
+      firebase.initializeApp(config);
+    </script>
   </body>
 </html>

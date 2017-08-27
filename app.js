@@ -66,7 +66,7 @@ app.use((req, res, next) => {
 })
 
 app.use((req, res, next) => {
-  (req.session.solved) ? res.redirect('https://www.youtube.com/watch?v=3NuFVQk_CCs') : next();
+  (req.session.solved) ? res.redirect('https://youtu.be/3NuFVQk_CCs?t=12') : next();
 })
 
 app.use('/guess', (req, res, next) => {
