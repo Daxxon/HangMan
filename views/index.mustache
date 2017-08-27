@@ -9,14 +9,22 @@
     <h4>PLEASE GUESS THE WORD</h4>
     <p>(If you don't, we will hang a stick-figure)</p>
   </br>
+  {{#progress}}
     {{#word}}
       <span style="text-decoration: underline">{{letter}}</span>
     {{/word}}
-    <p>Choose your letter wisely</p>
-    <form action="/guess" method="post">
-      <input type="text" name="guess"></input>
-      <button>Submit</button>
-    </form>
+  {{/progress}}
+  <p>Choose your letter wisely</p>
+  </br>
+  <p>Lettes Not In Word</p>
+  {{#guessed}}
+    <span style="text-decoration: underline">{{.}}</span>
+  {{/guessed}}
+  <form action="/guess" method="post">
+    <input type="text" name="guess" autoFocus="true"></input>
+    <button>Submit</button>
+  </form>
+
     <!-- insert shit here -->
     <!-- <script src="main.js"></script> -->
   </body>
